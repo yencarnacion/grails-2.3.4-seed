@@ -71,6 +71,7 @@ grails.project.dependency.resolution = {
         compile ":famfamfam:1.0.1"
         compile ":jquery-ui:1.10.3"
         compile ":mail:1.0.1"
+        compile ':webflow:2.0.8.1'
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"

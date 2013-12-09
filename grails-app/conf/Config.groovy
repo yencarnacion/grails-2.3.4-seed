@@ -131,23 +131,7 @@ log4j = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'seed.auth.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'seed.auth.UserRole'
 grails.plugin.springsecurity.authority.className = 'seed.auth.Role'
-//grails.plugin.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
-//grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-//        '/home/**':      ['ROLE_ADMIN', 'ROLE_USER', 'IS_AUTHENTICATED_FULLY'],
-//        '/admin/**':     ['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'],
-//        '/api/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
-//        '/**':          ['IS_AUTHENTICATED_ANONYMOUSLY']
-//]
 
-//grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-//        '/':                              ['permitAll'],
-//        '/index':                         ['permitAll'],
-//        '/index.gsp':                     ['permitAll'],
-//        '/**/js/**':                      ['permitAll'],
-//        '/**/css/**':                     ['permitAll'],
-//        '/**/images/**':                  ['permitAll'],
-//        '/**/favicon.ico':                ['permitAll']
-//]
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [

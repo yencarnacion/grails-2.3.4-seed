@@ -13,7 +13,7 @@
 </head>
 <body>
 <ul>
-    <li class="controller"><g:link controller="contentMaterial"><g:message code="admin.welcome" default="Content Material Webflow" /></g:link></li>
+    <li class="controller"><g:link controller="webflow"><g:message code="admin.welcome" default="Content Material Webflow" /></g:link></li>
 </ul>
 </body>
 </html>
