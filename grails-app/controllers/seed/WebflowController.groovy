@@ -32,7 +32,7 @@ class WebflowController {
             }.to "enterContent01"
             on("next") {
                 //log.debug("params:"+ params)
-                //flow.contentMaterialList.get(0).content = params.contentMaterialInstance.content
+                flow.contentMaterialList.get(0).content = params.contentMaterialInstance.content
                 if (!flow.contentMaterialList[0].content) return error()
             }.to "prepareContent02"
         }
@@ -55,6 +55,7 @@ class WebflowController {
         enterContent02{
             on("back") {
                 if (!flow.contentMaterialList.get(1).content) return error()
+                [contentMaterialInstance: flow.contentMaterialList[0] ]
             }.to "enterContent01"
             on("next") {
                 //log.debug("params:"+ params)
@@ -67,7 +68,7 @@ class WebflowController {
         displayContentMaterial{
             on("back") {
             }.to "enterContent02"
-            on("cancel").to "exit"
+            on("cancel").to "beforeExit"
             on("save") {
                 for(int i=0; i<2; i++){
                     def cm = flow.contentMaterialList[i]
