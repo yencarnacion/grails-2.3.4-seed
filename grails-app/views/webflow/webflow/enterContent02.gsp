@@ -31,10 +31,8 @@
             <g:render template="contentForm"/>
         </fieldset>
         <fieldset class="buttons">
-            %{--<g:submitButton name="back" value="${message(code: 'default.button.back.label', default: 'Back')}"></g:submitButton>--}%
+            <g:submitButton name="back" value="${message(code: 'default.button.back.label', default: 'Back')}"></g:submitButton>
             <g:submitButton name="next" value="${message(code: 'default.button.next.label', default: 'Next')}"></g:submitButton>
-            <span class="alignRight"><g:submitButton class="save" name="save" value="${message(code: 'default.button.save.label', default: 'Save')}"></g:submitButton></span>
-
         </fieldset>
     </g:form>
 </div>

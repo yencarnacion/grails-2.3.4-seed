@@ -21,34 +21,23 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
-    <g:form action="contentMaterial" method="post" >
+    <g:form action="webflow" method="post" >
 
-        <ol class="property-list contentMaterial">
+        <table>
+        <g:each in="${contentMaterialList}" status="i" var="contentMaterialInstance">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-            <g:if test="${contentMaterialInstance?.content}">
-                <li class="fieldcontain">
-                    <span id="content-label" class="property-label"><g:message code="contentMaterialInstance.content.label" default="Content" /></span>
+                <td>${fieldValue(bean: contentMaterialInstance, field: "content")}</td>
 
-                    <span class="property-value" aria-labelledby="content-label"><g:fieldValue bean="${contentMaterialInstance}" field="content"/></span>
+            </tr>
+        </g:each>
+        </table>
 
-                </li>
-            </g:if>
 
-            <g:if test="${contentMaterialInstance?.questionsAndAnswers}">
-                <li class="fieldcontain">
-                    <span id="questionsAndAnswers-label" class="property-label"><g:message code="contentMaterialInstance.questionsAndAnswers.label" default="Questions And Answers" /></span>
-
-                    <g:each in="${contentMaterialInstance.questionsAndAnswers}" var="q">
-                        <span class="property-value" aria-labelledby="questionsAndAnswers-label"><g:link controller="questionAndAnswer" action="show" id="${q.id}">${q?.encodeAsHTML()}</g:link></span>
-                    </g:each>
-
-                </li>
-            </g:if>
-
-        </ol>
         <fieldset class="buttons">
             <g:submitButton name="back" value="${message(code: 'default.button.back.label', default: 'Back')}"></g:submitButton>
-            <g:submitButton name="submit" value="${message(code: 'default.button.next.label', default: 'Next')}"></g:submitButton>
+            <g:submitButton name="cancel" value="${message(code: 'default.button.cancel.label', default: 'Cancel')}"></g:submitButton>
+
             <span class="alignRight"><g:submitButton class="save" name="save" value="${message(code: 'default.button.save.label', default: 'Save')}"></g:submitButton></span>
 
         </fieldset>
